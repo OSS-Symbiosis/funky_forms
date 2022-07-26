@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@font-face {
+         font-family: 'LabilGrotesk';
+         src: url('../fonts/LabilGrotesk-Regular.ttf') format('embedded-opentype'),
+         url('../fonts/LabilGrotesk-Regular.ttf') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/LabilGrotesk-Regular.ttf') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/LabilGrotesk-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/LabilGrotesk-Regular.ttf') format('svg');  /* Legacy iOS */
+}
+
+@font-face {
+         font-family: 'LabilGroteskBold';
+         src: url('../fonts/LabilGrotesk-Bold.ttf') format('embedded-opentype'),
+         url('../fonts/LabilGrotesk-Bold.ttf') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/LabilGrotesk-Bold.ttf') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/LabilGrotesk-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/LabilGrotesk-Bold.ttf') format('svg');  /* Legacy iOS */
+}
+
+.hero-container{
+    font-family: 'LabilGroteskBold', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero-container h1{
+    color: #BE1E2D;
+    font-weight: bolder;
+    font-size: 48px;
+    margin: 16px 0px 0px 8px;
+}
+
+.hero-container h2{
+    color: rgb(57, 57, 57);
+    font-family: 'Open Sans';
+    font-weight: lighter;
+    font-size: 36px;
+    margin: 0px 0px 0px 8px;
+}
+
+#speaker{
+    font-weight: bold;
+    font-style: italic;
+}
