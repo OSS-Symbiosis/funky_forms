@@ -46,7 +46,7 @@ export default function FormikForm() {
                     {/* Message */}
                     <Field as="textarea" classname='input-field' type="text" name="message" placeholder="Got questions or suggestions? Put them here!" />
                     <ErrorMessage name="message" component="div" />
-                    <button type="submit" disabled={isSubmitting}>
+                    <button className='submit-btn' type="submit" disabled={isSubmitting}>
                         Submit
                     </button>
                 </Form>

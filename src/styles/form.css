@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -17,7 +17,7 @@ input {
     height: 36px;
     margin: 10px 0px;
     padding-left: 13px;
-    font-family: 'Labil Grotesk';
+    font-family: 'LabilGrotesk', 'sans-serif';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -27,12 +27,13 @@ input {
     outline: none;
 }
 
-textarea{
+textarea {
     width: 560px;
     height: 125px;
     margin: 10px 0px;
+    margin-bottom: 20px;
     padding-left: 13px;
-    font-family: 'Labil Grotesk';
+    font-family: 'LabilGrotesk', 'sans-serif';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -43,22 +44,63 @@ textarea{
     resize: none;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
     color: #BE142D;
+    font-family: 'LabilGrotesk', 'sans-serif';
 }
 
-#branch-batch-right{
+#branch-batch-right {
     min-width: 270px;
     margin-left: 10px;
 }
 
-#branch-batch-left{
+#branch-batch-left {
     min-width: 270px;
     margin-right: 10px;
 }
 
-.branch-batch-container{
+.branch-batch-container {
     display: flex;
     justify-content: center;
     max-width: 560px;
+}
+
+.submit-btn{
+    width: 560px;
+    height: 36px;
+    background-color: black;
+    color: white;
+    font-family: 'LabilGrotesk';
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 660px) {
+    input {
+        min-width: 253px;
+    }
+
+    textarea {
+        width: 253px;
+    }
+
+    #branch-batch-right {
+        margin-left: 0;
+        min-width: 253px;
+    }
+
+    #branch-batch-left {
+        margin-right: 0;
+        min-width: 253px;
+    }
+
+    .branch-batch-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: none;
+    }
+    .submit-btn{
+        width: 253px;
+    }
 }
