@@ -1,56 +1,107 @@
 import React from 'react'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import './styles/form.css';
+import { basicSchema } from './schemas/formik_form';
+import { database } from './firebase';
 
 export default function FormikForm() {
+    async function sendData(data, setSubmitting){
+        setSubmitting(true);
+        await database.collection('responses').doc(`${data.form_id}_${data.fullname}_${data.batch}_${data.branch}`).set(data)
+    .then(alert('Response submitted!'))
+                .catch((e)=>alert(e));}
     return (
         <Formik
-            initialValues={{ name: '', email: '', batch: '', branch: '', github: '', message: '' }}
-            validate={values => {
-                const errors = {};
-                if (!values.email) {
-                    errors.email = 'Required';
-                } else if (
-                    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                ) {
-                    errors.email = 'Invalid email address';
-                }
-                return errors;
-            }}
+            initialValues={{ form_id: '01', fullname: '', email: '', batch: '', branch: '', github: '', message: '' }}
             onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                }, 400);
+                const data = {
+                    form_id: values.form_id,
+                    fullname: values.fullname,
+                    email: values.email,
+                    batch: values.batch,
+                    branch: values.branch,
+                    github: values.github,
+                    message: values.message
+                };
+                sendData(data, setSubmitting);
             }}
+            validationSchema={basicSchema}
         >
-            {({ isSubmitting }) => (
-                <Form className='form-container'>
-                    {/* Full name */}
-                    <Field classname='input-field' type="text" name="name" placeholder="Full name" />
-                    <ErrorMessage name="name" component="div" />
+            {({
+                values,
+                errors,
+                touched,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                isSubmitting,
+            }) => (
+                <form className='form-container' onSubmit={handleSubmit} autoComplete="off">
+                    {/* Name */}
+                    <input
+                        type="text"
+                        name="fullname"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.name}
+                        placeholder="Fullname"
+                    />
+                    <p className="error-msg">{errors.fullname && touched.fullname && errors.fullname}</p>
                     {/* Email */}
-                    <Field classname='input-field' type="email" name="email" placeholder="Email" />
-                    <ErrorMessage name="email" component="div" />
+                    <input
+                        type="email"
+                        name="email"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.email}
+                        placeholder="Email"
+                    />
+                    <p className="error-msg">{errors.email && touched.email && errors.email}</p>
                     {/* Batch */}
-                    <div className='branch-batch-container'>
-                        <Field id='branch-batch-left' classname='input-field' type="text" name="batch" placeholder="Batch" />
-                        <ErrorMessage name="batch" component="div" />
-                        {/* Branch */}
-                        <Field id='branch-batch-right' classname='input-field' type="text" name="branch" placeholder="Branch" />
-                        <ErrorMessage name="branch" component="div" />
-                    </div>
-                    {/* GitHub */}
-                    <Field classname='input-field' type="text" name="github" placeholder="Link to your GitHub profile" />
-                    <ErrorMessage name="github" component="div" />
-                    {/* Message */}
-                    <Field as="textarea" classname='input-field' type="text" name="message" placeholder="Got questions or suggestions? Put them here!" />
-                    <ErrorMessage name="message" component="div" />
-                    <button className='submit-btn' type="submit" disabled={isSubmitting}>
+                    <input
+                        type="text"
+                        name="batch"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.batch}
+                        placeholder="Batch"
+                    />
+                    <p className="error-msg">{errors.batch && touched.batch && errors.batch}</p>
+                    {/* Branch */}
+                    <input
+                        type="text"
+                        name="branch"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.branch}
+                        placeholder="Branch"
+                    />
+                    <p className="error-msg">{errors.branch && touched.branch && errors.branch}</p>
+                    {/* Github */}
+                    <input
+                        type="text"
+                        name="github"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.github}
+                        placeholder="GitHub username"
+                    />
+                    <p className="error-msg">{errors.github && touched.github && errors.github}</p>
+                    {/* message */}
+                    <textarea
+                        type="text"
+                        name="message"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.message}
+                        placeholder="Got questions or suggestions? Put them here!"
+                    />
+                    <p className="error-msg">{errors.message && touched.message && errors.message}</p>
+                    <button className="submit-btn" type="submit" disabled={isSubmitting}>
                         Submit
                     </button>
-                </Form>
+                </form>
             )}
         </Formik>
-    )
+    );
 }
