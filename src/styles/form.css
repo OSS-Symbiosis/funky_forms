@@ -11,7 +11,7 @@
     flex-direction: column;
 }
 
-input {
+input, select {
     min-width: 560px;
     max-width: 70vw;
     height: 36px;
@@ -72,7 +72,7 @@ textarea::placeholder {
 }
 
 @media only screen and (max-width: 660px) {
-    input {
+    input, select{
         min-width: 253px;
     }
 

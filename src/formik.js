@@ -9,7 +9,7 @@ export default function FormikForm() {
         setSubmitting(true);
         await database.collection('responses').doc(`${data.form_id}_${data.fullname}_${data.batch}_${data.branch}`).set(data)
     .then(alert('Response submitted!'))
-                .catch((e)=>alert(e));}
+    .catch((e)=>alert(e));}
     return (
         <Formik
             initialValues={{ form_id: '01', fullname: '', email: '', batch: '', branch: '', github: '', message: '' }}
@@ -23,7 +23,8 @@ export default function FormikForm() {
                     github: values.github,
                     message: values.message
                 };
-                sendData(data, setSubmitting);
+                sendData(data, setSubmitting)
+                .then(() => values.resetForm()); 
             }}
             validationSchema={basicSchema}
         >
@@ -58,24 +59,39 @@ export default function FormikForm() {
                     />
                     <p className="error-msg">{errors.email && touched.email && errors.email}</p>
                     {/* Batch */}
-                    <input
+                    <select
                         type="text"
                         name="batch"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.batch}
                         placeholder="Batch"
-                    />
+                    >
+                        <option value=''>Select Batch</option>
+                        <option value='2019-23'>2019-23</option>
+                        <option value='2020-24'>2020-24</option>
+                        <option value='2021-25'>2021-25</option>
+                        <option value='2022-26'>2022-26</option>
+                    </select>
                     <p className="error-msg">{errors.batch && touched.batch && errors.batch}</p>
                     {/* Branch */}
-                    <input
+                    <select
                         type="text"
                         name="branch"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.branch}
                         placeholder="Branch"
-                    />
+                    >
+                        <option value=''>Select Branch</option>
+                        <option value='CS'>CS</option>
+                        <option value='IT'>IT</option>
+                        <option value='AIML'>AIML</option>
+                        <option value='ENTC'>ENTC</option>
+                        <option value='RNA'>RNA</option>
+                        <option value='MECH'>MECH</option>
+                        <option value='CIVIL'>CIVIL</option>
+                    </select>
                     <p className="error-msg">{errors.branch && touched.branch && errors.branch}</p>
                     {/* Github */}
                     <input
