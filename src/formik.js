@@ -1,14 +1,19 @@
-import React from 'react'
+import { useState } from 'react'
 import { Formik } from 'formik';
 import './styles/form.css';
 import { basicSchema } from './schemas/formik_form';
 import { database } from './firebase';
+import Modal from "./components/modal/Modal";
 
 export default function FormikForm() {
+    
+    const [ modalOpen , setModalOpen ] = useState(false);
+    
     async function sendData(data, setSubmitting){
         setSubmitting(true);
         await database.collection('responses').doc(`${data.form_id}_${data.fullname}_${data.batch}_${data.branch}`).set(data)
-    .then(alert('Response submitted!'))
+    // .then(alert('Response submitted!'))
+    .then(console.log(data))
     .catch((e)=>alert(e));}
     return (
         <Formik
@@ -113,9 +118,12 @@ export default function FormikForm() {
                         placeholder="Got questions or suggestions? Put them here!"
                     />
                     <p className="error-msg">{errors.message && touched.message && errors.message}</p>
-                    <button className="submit-btn" type="submit" disabled={isSubmitting}>
+                    <button className="submit-btn" type="submit" onClick={()=>setModalOpen(true)} disabled={isSubmitting}>
                         Submit
                     </button>
+
+                    {modalOpen && <Modal setModalOpen={setModalOpen}/>}
+
                 </form>
             )}
         </Formik>
