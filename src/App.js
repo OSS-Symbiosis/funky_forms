@@ -1,6 +1,7 @@
 import Hero from './Hero';
 import FormikForm from './formik';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotFound from './NotFound';
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route path={`/register/`} element={<div><Hero/><FormikForm /></div>} />
-        <Route path='*' element={<div>[404] Page doesn't exist! Are you visiting the right link?</div>} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
   );

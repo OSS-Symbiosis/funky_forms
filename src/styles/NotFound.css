@@ -1,0 +1,29 @@
+.not-found-container{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 40px;
+}
+
+.err-title{
+    font-family: sans-serif;
+    font-size: 92px;
+}
+
+p{
+    font-size: 28px;
+}
+
+.solution-list{
+    padding-top: 15px;
+}
+
+.list-item{
+    font-size: 26px;
+    display: list-item;
+    list-style: decimal;
+    list-style-position: inside;
+    font-family: 'LabilGrotesk-Light';
+}
