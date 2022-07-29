@@ -9,11 +9,12 @@ body{
 .darkBG {
     background-color: rgba(0, 0, 0, 0.2);
     width: 120vw;
-    height: 100vh;
+    height: 120vh;
     z-index: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: hidden;
     position: absolute;
   }
   
@@ -25,7 +26,7 @@ body{
   }
   
   .modal {
-    width: 250px;
+    width: 300px;
     height: 170px;
     background: white;
     /* color: white; */
@@ -38,7 +39,7 @@ body{
   .modalContent {
     color : #BE1E2D;
     padding: 60px;
-    font-size: 14px;
+    font-size: 20px;
     color: #BE1E2D;
     text-align: center;
   }
