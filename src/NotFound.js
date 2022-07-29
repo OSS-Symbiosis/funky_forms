@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <div className='not-found-container'>
       <h1 className='err-title'>404!</h1>
-      <p>
+      <p className='url-message'>
         The URL you are trying to visit doesn't exist.
         <ol className='solution-list'>
           {solutions.map(solution =>
