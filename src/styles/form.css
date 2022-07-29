@@ -51,6 +51,22 @@ textarea::placeholder {
     font-family: 'LabilGrotesk', 'sans-serif';
 }
 
+input:focus, select:focus, textarea:focus{
+    background-color: rgb(255, 240, 240);
+    transition: 0.3s;
+}
+
+.submit-btn:focus{
+    background-color: rgb(50, 50, 50);
+    outline: none;
+    transition: 0.3s;
+}
+
+.submit-btn:hover{
+    background-color: rgb(70, 70, 70);
+    transition: 0.3s;
+}
+
 .submit-btn{
     width: 560px;
     height: 36px;
@@ -58,6 +74,7 @@ textarea::placeholder {
     color: white;
     font-family: 'LabilGrotesk';
     font-size: 16px;
+    border: none;
 }
 
 .error-msg{
