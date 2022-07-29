@@ -13,7 +13,7 @@ export default function FormikForm() {
     return (
         <Formik
             initialValues={{ form_id: '01', fullname: '', email: '', batch: '', branch: '', github: '', message: '' }}
-            onSubmit={(values, { setSubmitting }) => {
+            onSubmit={(values, { resetForm, setSubmitting }) => {
                 const data = {
                     form_id: values.form_id,
                     fullname: values.fullname,
@@ -23,8 +23,8 @@ export default function FormikForm() {
                     github: values.github,
                     message: values.message
                 };
-                sendData(data, setSubmitting)
-                .then(() => values.resetForm()); 
+                sendData(data, setSubmitting);
+                resetForm({values: ''});
             }}
             validationSchema={basicSchema}
         >
@@ -44,7 +44,7 @@ export default function FormikForm() {
                         name="fullname"
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.name}
+                        value={values.fullname}
                         placeholder="Fullname"
                     />
                     <p className="error-msg">{errors.fullname && touched.fullname && errors.fullname}</p>
