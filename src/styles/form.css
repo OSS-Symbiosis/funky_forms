@@ -27,6 +27,9 @@ select {
     color: #BE142D;
     border: 1px solid #BE142D;
     outline: none;
+    border-radius: 0;
+    -webkit-appearance:none;
+    background-color: white;
 }
 
 textarea {
@@ -45,12 +48,18 @@ textarea {
     border: 1px solid #BE142D;
     outline: none;
     resize: none;
+    border-radius: 0;
+}
+
+option{
+    font-family: 'LabilFrotesk', sans-serif;
 }
 
 input::placeholder,
 textarea::placeholder {
     color: #BE142D;
     font-family: 'LabilGrotesk', 'sans-serif';
+    opacity: 1;
 }
 
 input:focus,
@@ -97,7 +106,7 @@ textarea:focus {
     margin-top: 2px;
     width: 560px;
     padding-left: 13px;
-    font-family: 'LabilGrotesk-Light';
+    font-family: 'LabilGroteskLight';
 }
 
 .github-register>a {
