@@ -4,6 +4,7 @@ import './styles/form.css';
 import { basicSchema } from './schemas/formik_form';
 import { database } from './firebase';
 import Modal from "./components/modal/Modal";
+import {Link} from 'react-router-dom';
 
 export default function FormikForm() {
     
@@ -107,6 +108,7 @@ export default function FormikForm() {
                         value={values.github}
                         placeholder="GitHub username"
                     />
+                    <p className='github-register'>Don't have a GitHub account? Create one now! <a href={"https://www.github.com/"} target={"_blank"}>Click here</a></p>
                     <p className="error-msg">{errors.github && touched.github && errors.github}</p>
                     {/* message */}
                     <textarea

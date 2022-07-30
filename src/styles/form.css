@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
+
 }
 
 .form-container {
@@ -12,7 +12,8 @@
     flex-direction: column;
 }
 
-input, select {
+input,
+select {
     min-width: 560px;
     max-width: 70vw;
     height: 36px;
@@ -52,23 +53,25 @@ textarea::placeholder {
     font-family: 'LabilGrotesk', 'sans-serif';
 }
 
-input:focus, select:focus, textarea:focus{
+input:focus,
+select:focus,
+textarea:focus {
     background-color: rgb(255, 240, 240);
     transition: 0.3s;
 }
 
-.submit-btn:focus{
+.submit-btn:focus {
     background-color: rgb(50, 50, 50);
     outline: none;
     transition: 0.3s;
 }
 
-.submit-btn:hover{
+.submit-btn:hover {
     background-color: rgb(70, 70, 70);
     transition: 0.3s;
 }
 
-.submit-btn{
+.submit-btn {
     width: 560px;
     height: 36px;
     background-color: black;
@@ -78,7 +81,7 @@ input:focus, select:focus, textarea:focus{
     border: none;
 }
 
-.error-msg{
+.error-msg {
     color: black;
     font-family: 'Open Sans', 'sans-serif';
     font-style: italic;
@@ -89,8 +92,28 @@ input:focus, select:focus, textarea:focus{
     align-items: flex-start;
 }
 
+.github-register {
+    color: black;
+    margin-top: 2px;
+    width: 560px;
+    padding-left: 13px;
+    font-family: 'LabilGrotesk-Light';
+}
+
+.github-register>a {
+    text-decoration: none;
+    color: #BE142D;
+    font-family: 'LabilGrotesk';
+}
+
+.github-register>a:hover {
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 660px) {
-    input, select{
+
+    input,
+    select {
         min-width: 253px;
     }
 
@@ -104,11 +127,18 @@ input:focus, select:focus, textarea:focus{
         flex-direction: column;
         max-width: 253px;
     }
-    .submit-btn{
+
+    .submit-btn {
         width: 253px;
     }
-    .error-msg{
-    width: 253px;
-    align-items: flex-start;
-}
+
+    .error-msg {
+        width: 253px;
+        align-items: flex-start;
+    }
+
+    .github-register {
+        width: 253px;
+        padding-left: 13px;
+    }
 }
