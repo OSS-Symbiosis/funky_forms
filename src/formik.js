@@ -40,7 +40,7 @@ export default function FormikForm() {
                     message: values.message,
                     submittedAt: values.submittedAt
                 };
-                values.submittedAt = getTimeString();
+                data.submittedAt = getTimeString();
                 sendData(data, setSubmitting);
                 setModalOpen(true);
                 resetForm({values: ''});
