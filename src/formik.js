@@ -29,6 +29,7 @@ export default function FormikForm() {
                     message: values.message
                 };
                 sendData(data, setSubmitting);
+                setModalOpen(true);
                 resetForm({values: ''});
             }}
             validationSchema={basicSchema}
@@ -119,7 +120,7 @@ export default function FormikForm() {
                         placeholder="Got questions or suggestions? Put them here!"
                     />
                     <p className="error-msg">{errors.message && touched.message && errors.message}</p>
-                    <button className="submit-btn" type="submit" onClick={()=>setModalOpen(true)} disabled={isSubmitting}>
+                    <button className="submit-btn" type="submit" disabled={isSubmitting}>
                         Submit
                     </button>
 
