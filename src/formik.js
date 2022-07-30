@@ -5,6 +5,17 @@ import { basicSchema } from './schemas/formik_form';
 import { database } from './firebase';
 import Modal from "./components/modal/Modal";
 
+const getTimeString = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1 // months start from 0
+    const day = date.getDay()
+    const hour = date.getHours();
+    const minutes = date.getMinutes();
+    console.log(`${year}-${month}-${day} ${hour}:${minutes}`);
+    return `${year}-${month}-${day} ${hour}:${minutes}`;
+}
+
 export default function FormikForm() {
     
     const [ modalOpen , setModalOpen ] = useState(false);
@@ -17,7 +28,7 @@ export default function FormikForm() {
     .catch((e)=>alert(e));}
     return (
         <Formik
-            initialValues={{ form_id: '01', fullname: '', email: '', batch: '', branch: '', github: '', message: '' }}
+            initialValues={{ form_id: '01', fullname: '', email: '', batch: '', branch: '', github: '', message: '', submittedAt: getTimeString() }}
             onSubmit={(values, { resetForm, setSubmitting }) => {
                 const data = {
                     form_id: values.form_id,
@@ -26,9 +37,12 @@ export default function FormikForm() {
                     batch: values.batch,
                     branch: values.branch,
                     github: values.github,
-                    message: values.message
+                    message: values.message,
+                    submittedAt: values.submittedAt
                 };
+                data.submittedAt = getTimeString();
                 sendData(data, setSubmitting);
+                setModalOpen(true);
                 resetForm({values: ''});
             }}
             validationSchema={basicSchema}
@@ -107,6 +121,7 @@ export default function FormikForm() {
                         value={values.github}
                         placeholder="GitHub username"
                     />
+                    <p className='github-register'>Don't have a GitHub account? Create one now! <a href={"https://www.github.com/"} rel="noreferrer" target={"_blank"}>Click here</a></p>
                     <p className="error-msg">{errors.github && touched.github && errors.github}</p>
                     {/* message */}
                     <textarea
@@ -118,7 +133,7 @@ export default function FormikForm() {
                         placeholder="Got questions or suggestions? Put them here!"
                     />
                     <p className="error-msg">{errors.message && touched.message && errors.message}</p>
-                    <button className="submit-btn" type="submit" onClick={()=>setModalOpen(true)} disabled={isSubmitting}>
+                    <button className="submit-btn" type="submit" disabled={isSubmitting}>
                         Submit
                     </button>
 

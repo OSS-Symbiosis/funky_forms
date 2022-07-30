@@ -1,56 +1,152 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 @font-face {
-         font-family: 'LabilGrotesk';
-         src: url('../fonts/LabilGrotesk-Regular.ttf') format('embedded-opentype'),
-         url('../fonts/LabilGrotesk-Regular.ttf') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/LabilGrotesk-Regular.ttf') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/LabilGrotesk-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/LabilGrotesk-Regular.ttf') format('svg');  /* Legacy iOS */
+    font-family: 'LabilGrotesk';
+    src: url('../fonts/LabilGrotesk-Regular.ttf') format('embedded-opentype'),
+        url('../fonts/LabilGrotesk-Regular.ttf') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/LabilGrotesk-Regular.ttf') format('woff'),
+        /* Pretty Modern Browsers */
+        url('../fonts/LabilGrotesk-Regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/LabilGrotesk-Regular.ttf') format('svg');
+    /* Legacy iOS */
 }
 
 @font-face {
-         font-family: 'LabilGroteskBold';
-         src: url('../fonts/LabilGrotesk-Bold.ttf') format('embedded-opentype'),
-         url('../fonts/LabilGrotesk-Bold.ttf') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/LabilGrotesk-Bold.ttf') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/LabilGrotesk-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/LabilGrotesk-Bold.ttf') format('svg');  /* Legacy iOS */
+    font-family: 'LabilGroteskLight';
+    src: url('../fonts/LabilGrotesk-Light.ttf') format('embedded-opentype'),
+        url('../fonts/LabilGrotesk-Light.ttf') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/LabilGrotesk-Light.ttf') format('woff'),
+        /* Pretty Modern Browsers */
+        url('../fonts/LabilGrotesk-Light.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/LabilGrotesk-Light.ttf') format('svg');
+    /* Legacy iOS */
 }
 
-.hero-container{
+@font-face {
+    font-family: 'LabilGroteskBold';
+    src: url('../fonts/LabilGrotesk-Bold.ttf') format('embedded-opentype'),
+        url('../fonts/LabilGrotesk-Bold.ttf') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/LabilGrotesk-Bold.ttf') format('woff'),
+        /* Pretty Modern Browsers */
+        url('../fonts/LabilGrotesk-Bold.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/LabilGrotesk-Bold.ttf') format('svg');
+    /* Legacy iOS */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200&display=swap');
+
+.hero-container {
     font-family: 'LabilGroteskBold', sans-serif;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.hero-container h1{
-    color: #BE1E2D;
-    font-weight: bolder;
+.club-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.soss {
+    font-family: 'LabilGroteskBold';
     font-size: 48px;
-    margin: 16px 0px 0px 8px;
+    padding: 0 10px;
 }
 
-.hero-container h2{
-    color: rgb(57, 57, 57);
-    font-family: 'Open Sans';
-    font-weight: bold;
+.techtalk {
+    font-size: 48px;
+    color: black;
+}
+
+.collab {
+    font-family: 'Raleway', sans-serif;
+    font-size: 48px;
+    color: black;
+    padding: 0;
+    margin: 0;
+    font-weight: 200;
+}
+
+.speakers {
+    color: black;
     font-size: 36px;
-    margin: 0px 0px 0px 8px;
 }
 
-#speaker{
-    font-weight: bold !important;
-    font-style: italic;
+.speaker {
+    font-family: 'LabilGrotesk';
+    text-decoration: none;
+    font-size: 36px;
     color: #BE1E2D;
+    padding: 0 15px;
 }
 
-.p{
-    font-family: sans-serif;
+.date {
+    padding-top: 1px;
+    font-family: 'Open Sans';
+    font-size: 28px;
+    color: black;
 }
 
-.date{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-    font-size: 20px !important;
-    font-weight: 400 !important;
+@media only screen and (max-width: 660px) {
+
+    .hero-container {
+        font-family: 'LabilGroteskBold', sans-serif;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .club-banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+    }
+
+    .soss {
+        font-family: 'LabilGroteskBold';
+        font-size: 30px;
+        padding: 0 10px;
+    }
+
+    .techtalk {
+        font-size: 30px;
+        color: black;
+    }
+
+    .collab {
+        font-family: 'Raleway', sans-serif;
+        font-size: 28px;
+        color: black;
+        padding: 0;
+        margin: 0;
+        font-weight: 200;
+    }
+
+    .speaker {
+        font-family: 'LabilGrotesk';
+        font-size: 30px;
+        color: #BE1E2D;
+        padding: 0 15px;
+    }
+
+    .speakers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .date {
+        margin-top: 2px;
+        font-size: 20px;
+    }
 }
