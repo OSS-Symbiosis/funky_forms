@@ -7,6 +7,9 @@ const Modal = ({setModalOpen}) => {
       <div className = "centered">
         <div className = "modal">
           <div className="modalContent">
+            <div className='modalHeading'>
+              Form submitted.
+            </div>
             See you there! 🚀
           </div>
         </div>
