@@ -17,6 +17,8 @@
          url('../fonts/LabilGrotesk-Bold.ttf') format('svg');  /* Legacy iOS */
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200&display=swap');
+
 .hero-container{
     font-family: 'LabilGroteskBold', sans-serif;
     display: flex;
@@ -24,33 +26,60 @@
     flex-direction: column;
 }
 
-.hero-container h1{
-    color: #BE1E2D;
-    font-weight: bolder;
+.club-banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.soss{
+    font-family: 'LabilGroteskBold';
     font-size: 48px;
-    margin: 16px 0px 0px 8px;
+    padding: 0 10px;
 }
 
-.hero-container h2{
-    color: rgb(57, 57, 57);
-    font-family: 'Open Sans';
-    font-weight: bold;
+.techtalk{
+    font-size: 48px;
+    color: black;
+}
+
+.collab{
+    font-family: 'Raleway', sans-serif;
+    font-size: 48px;
+    color: black;
+    padding: 0;
+    margin: 0;
+    font-weight: 200;
+}
+
+.speakers{
+    color: black;
     font-size: 36px;
-    margin: 0px 0px 0px 8px;
 }
 
-#speaker{
-    font-weight: bold !important;
-    font-style: italic;
+.speaker{
+    font-family: 'LabilGrotesk';
+    font-size: 36px;
     color: #BE1E2D;
-}
-
-.p{
-    font-family: sans-serif;
+    padding: 0 15px;
 }
 
 .date{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-    font-size: 20px !important;
-    font-weight: 400 !important;
+    padding-top: 1px;
+    font-family: 'Open Sans';
+    font-size: 28px;
+    color: black;
+}
+
+@media only screen and (max-width: 660px) {
+    .speakers{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .date{
+        margin-top: 7px;
+        font-size: 24px;
+    }
 }

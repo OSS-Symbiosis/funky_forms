@@ -2,14 +2,20 @@ import React from 'react';
 import './styles/hero.css';
 
 export default function Hero() {
-  const date = "Friday, 5th August 2022";
+  const date = "12pm, 6th August 2022 (Saturday)";
   return (
     <div className='hero-container'>
-        <h1>SOSS</h1>
-        <h2>Tech-talk</h2>
-        <p className='by'>by</p>
-        <h2 id='speaker' >Kumar Shivam</h2>
-        <h2 className='date'>{date}</h2>
+      <div className='club-banner'>
+        <span className='soss'>SOSS</span>
+        <span className='techtalk'>Tech-talk</span>
+      </div>
+      <div className='collab'>X</div>
+      <div className='speakers'>
+        <span className='speaker'>Kumar Shivam</span>
+        &
+        <span className='speaker'>Siddhant Khare</span>
+      </div>
+      <span className='date'>{date}</span>
     </div>
   )
 }
