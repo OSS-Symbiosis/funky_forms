@@ -9,7 +9,7 @@ const getTimeString = () => {
     const date = new Date();
     const year = date.getFullYear();
     const month = date.getMonth() + 1 // months start from 0
-    const day = date.getDay()
+    const day = date.getDay();
     const hour = date.getHours();
     const minutes = date.getMinutes();
     console.log(`${year}-${month}-${day} ${hour}:${minutes}`);
@@ -91,7 +91,7 @@ export default function FormikForm() {
                         <option value='2020-24'>2020-24</option>
                         <option value='2021-25'>2021-25</option>
                         <option value='2022-26'>2022-26</option>
-                        <option value='2022-26'>STAFF</option>
+                        <option value='STAFF'>STAFF</option>
                     </select>
                     <p className="error-msg">{errors.batch && touched.batch && errors.batch}</p>
                     {/* Branch */}
