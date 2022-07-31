@@ -91,6 +91,7 @@ export default function FormikForm() {
                         <option value='2020-24'>2020-24</option>
                         <option value='2021-25'>2021-25</option>
                         <option value='2022-26'>2022-26</option>
+                        <option value='2022-26'>STAFF</option>
                     </select>
                     <p className="error-msg">{errors.batch && touched.batch && errors.batch}</p>
                     {/* Branch */}
@@ -110,6 +111,7 @@ export default function FormikForm() {
                         <option value='RNA'>RNA</option>
                         <option value='MECH'>MECH</option>
                         <option value='CIVIL'>CIVIL</option>
+                        <option value='STAFF'>STAFF</option>
                     </select>
                     <p className="error-msg">{errors.branch && touched.branch && errors.branch}</p>
                     {/* Github */}
