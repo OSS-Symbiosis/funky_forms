@@ -82,6 +82,7 @@
 
 .speaker {
     font-family: 'LabilGrotesk';
+    text-decoration: none;
     font-size: 36px;
     color: #BE1E2D;
     padding: 0 15px;

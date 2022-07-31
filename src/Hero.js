@@ -11,9 +11,9 @@ export default function Hero() {
       </div>
       <div className='collab'>X</div>
       <div className='speakers'>
-        <span className='speaker'>Kumar Shivam</span>
+        <a className='speaker' href = "https://www.linkedin.com/in/kumar-shivam-9a5a94171/">Kumar Shivam</a>
         &
-        <span className='speaker'>Siddhant Khare</span>
+        <a className='speaker' href = "https://siddhant-k-code.github.io/">Siddhant Khare</a>
       </div>
       <span className='date'>{date}</span>
     </div>
