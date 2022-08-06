@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path={`/register/`} element={<div><Hero/><FormikForm /></div>} />
+        {/* <Route path={`/register/`} element={<div><Hero/><FormikForm /></div>} /> */}
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
