@@ -9,8 +9,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path={`form/techtalk/`} element={<div><Hero /><TechTalkForm /></div>} />
-        <Route path={`form/joinus`} element={<div><JoinUs></JoinUs></div>} />
+        <Route path={`/form/techtalk/`} element={<div><Hero /><TechTalkForm /></div>} />
+        <Route path={`/form/joinus/`} element={<div><JoinUs /></div>} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
