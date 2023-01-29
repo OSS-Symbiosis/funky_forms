@@ -28,7 +28,7 @@ select {
     border: 1px solid #BE142D;
     outline: none;
     border-radius: 0;
-    -webkit-appearance:none;
+    -webkit-appearance: none;
     background-color: white;
 }
 
@@ -51,7 +51,7 @@ textarea {
     border-radius: 0;
 }
 
-option{
+option {
     font-family: 'LabilFrotesk', sans-serif;
 }
 
@@ -88,13 +88,13 @@ textarea:focus {
     font-family: 'LabilGrotesk';
     font-size: 16px;
     border: none;
+    margin-top: 10px
 }
 
 .error-msg {
     color: black;
-    font-family: 'Open Sans', 'sans-serif';
-    font-style: italic;
-    font-weight: bold;
+    font-family: 'LabilGrotesk', 'sans-serif';
+    font-weight: lighter;
     padding: 0;
     margin: 0;
     width: 560px;

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Formik } from 'formik';
-import './styles/form.css';
-import { basicSchema } from './schemas/formik_form';
-import { database } from './firebase';
-import Modal from "./components/modal/Modal";
+import { techtalk } from '../schemas/formik_form';
+import { database } from '../firebase';
+import Modal from "./modal/Modal";
+import './../styles/form.css';
 
 const getTimeString = () => {
     const date = new Date();
@@ -16,16 +16,17 @@ const getTimeString = () => {
     return `${year}-${month}-${day} ${hour}:${minutes}`;
 }
 
-export default function FormikForm() {
-    
-    const [ modalOpen , setModalOpen ] = useState(false);
-    
-    async function sendData(data, setSubmitting){
+export default function TechTalkForm() {
+
+    const [modalOpen, setModalOpen] = useState(false);
+
+    async function sendData(data, setSubmitting) {
         setSubmitting(true);
         await database.collection('responses').doc(`${data.form_id}_${data.fullname}_${data.batch}_${data.branch}`).set(data)
-    // .then(alert('Response submitted!'))
-    .then(console.log(data))
-    .catch((e)=>alert(e));}
+            // .then(alert('Response submitted!'))
+            .then(console.log(data))
+            .catch((e) => alert(e));
+    }
     return (
         <Formik
             initialValues={{ form_id: '01', fullname: '', email: '', batch: '', branch: '', github: '', message: '', submittedAt: getTimeString() }}
@@ -43,9 +44,9 @@ export default function FormikForm() {
                 data.submittedAt = getTimeString();
                 sendData(data, setSubmitting);
                 setModalOpen(true);
-                resetForm({values: ''});
+                resetForm({ values: '' });
             }}
-            validationSchema={basicSchema}
+            validationSchema={techtalk}
         >
             {({
                 values,
@@ -139,7 +140,7 @@ export default function FormikForm() {
                         Submit
                     </button>
 
-                    {modalOpen && <Modal setModalOpen={setModalOpen}/>}
+                    {modalOpen && <Modal setModalOpen={setModalOpen} />}
 
                 </form>
             )}

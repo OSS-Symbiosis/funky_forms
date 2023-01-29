@@ -1,14 +1,16 @@
 import Hero from './Hero';
-import FormikForm from './formik';
+import TechTalkForm from './components/TechTalk';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFound from './NotFound';
+import JoinUs from './components/JoinUs';
 
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path={`/register/`} element={<div><Hero/><FormikForm /></div>} /> */}
+        <Route path={`form/techtalk/`} element={<div><Hero /><TechTalkForm /></div>} />
+        <Route path={`form/joinus`} element={<div><JoinUs></JoinUs></div>} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
