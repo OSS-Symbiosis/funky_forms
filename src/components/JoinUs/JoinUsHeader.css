@@ -1,0 +1,23 @@
+.soss-logo>img {
+	max-width: 300px;
+	margin-top: 20px;
+}
+
+.join-us-header {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.join-us-black {
+	color: black;
+}
+
+@media only screen and (max-width: 660px) {
+	.soss-logo>img {
+		max-width: 220px;
+	}
+
+	.join-us-header {
+		font-size: 1.4rem;
+	}
+}
