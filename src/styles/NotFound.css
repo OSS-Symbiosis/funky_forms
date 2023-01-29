@@ -1,4 +1,4 @@
-.not-found-container{
+.not-found-container {
     height: 70vh;
     display: flex;
     justify-content: center;
@@ -7,28 +7,28 @@
     margin: 0px 40px;
 }
 
-.err-title{
+.err-title {
     font-family: sans-serif;
     font-size: 92px;
 }
 
-.url-message{
+.url-message {
     font-size: 28px;
 }
 
-.solution-list{
+.solution-list {
     padding-top: 15px;
 }
 
-.list-item{
+.list-item {
     font-size: 26px;
     display: list-item;
     list-style: decimal;
     list-style-position: inside;
-    font-family: 'LabilGrotesk-Light';
+    font-family: 'LabilGrotesk';
 }
 
-.contact-btn{
+.contact-btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,7 +43,7 @@
     transition: 0.3s;
 }
 
-.contact-btn:hover{
+.contact-btn:hover {
     background-color: rgb(190, 20, 45, 0.2);
     color: #BE142D;
     transition: 0.5s;
