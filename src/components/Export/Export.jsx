@@ -32,6 +32,7 @@ export default function Export() {
 						))
 						}
 					</table>
+					Count = {Object.keys(entries).length}
 				</div>
 			</div>
 			<button onClick={handleFetch}>Fetch</button>
