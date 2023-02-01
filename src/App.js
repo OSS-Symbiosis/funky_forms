@@ -2,7 +2,7 @@ import Hero from './Hero';
 import TechTalkForm from './components/TechTalk';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFound from './NotFound';
-import JoinUs from './components/JoinUs/JoinUs';
+// import JoinUs from './components/JoinUs/JoinUs';
 import Export from './components/Export/Export';
 
 

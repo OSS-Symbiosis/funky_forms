@@ -119,6 +119,14 @@ textarea:focus {
     text-decoration: underline;
 }
 
+.phone-input {
+    max-width: 560px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 @media only screen and (max-width: 660px) {
 
     input,
